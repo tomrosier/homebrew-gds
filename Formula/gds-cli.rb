@@ -1,11 +1,11 @@
 class GdsCli < Formula
   desc "CLI for common commands used by Government Digital Service staff"
-  homepage "https://github.com/alphagov/gds-cli"
-  url "git@github.com:alphagov/gds-cli.git",
+  homepage "https://github.com/tomrosier/gds-cli"
+  url "git@github.com:tomrosier/gds-cli.git",
       using:    :git,
       tag:      "v5.14.0",
       revision: "9a82273e2f07479bc2ca45d118015f63e997efb9"
-  head "git@github.com:alphagov/gds-cli.git",
+  head "git@github.com:tomrosier/gds-cli.git",
       using:  :git,
       branch: "main"
 
@@ -16,7 +16,7 @@ class GdsCli < Formula
 
   def install
     ENV["GOOS"] = OS.mac? ? "darwin" : "linux"
-    ENV["GOARCH"] = "amd64"
+    ENV["GOARCH"] = `uname -m`.strip == "x86_64" ? "amd64" : "arm64"
 
     system "make"
 
