@@ -4,7 +4,7 @@ class GdsCli < Formula
   url "git@github.com:tomrosier/gds-cli.git",
       using:    :git,
       tag:      "v5.14.0",
-      revision: "9a82273e2f07479bc2ca45d118015f63e997efb9"
+      revision: "f4b0d87c19081a59572c5af36f46f48518a2dd31"
   head "git@github.com:tomrosier/gds-cli.git",
       using:  :git,
       branch: "main"
